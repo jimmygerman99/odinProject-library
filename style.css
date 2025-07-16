@@ -1,0 +1,100 @@
+.body {
+    height: 100vh;
+    width: 100vw;
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    height: 100px;
+    gap: 28px;
+}
+dialog {
+    /* Expand with window but within limits */
+    width: 40%;       /* default 40% of viewport width */
+    min-width: 40%; /* never smaller than 300px */
+    max-width: 600px; /* never larger than 600px */
+    
+
+    height: auto;     /* let it grow naturally with content */
+    min-height: fit-content;
+    max-height: 80vh; /* but not taller than 80% of screen height */
+    resize: both;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+form { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    label {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: left;
+    }
+    .bottomForm {
+        display: flex;
+        justify-content: space-around;
+        margin: 1px, 0, 20px 0;
+        gap: 50px;
+        
+    }
+}
+.bottomForm .button{
+    padding: 10px;
+    border: 1px solid black;  
+    background-color: #999;   
+}
+.button:hover {
+    background-color: #f0f0f0;
+}
+.title h1 {
+    font-size: 2em;
+    margin: 0;
+    left: 10px;
+}
+.addBook {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100px;
+}
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-color: black;
+    border-style: solid;
+    max-height: calc(100vh - 100px); /* Adjust 100px if you have a header/nav */
+}
+.header, .books {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 2fr 1fr;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.books {
+    display: flex;
+    flex-direction: column;
+}
+.book-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 2fr 1fr;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}

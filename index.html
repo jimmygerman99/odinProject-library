@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="title">
+        <h1>Book Library</h1>
+        <Button class="addBook">Add Book</Button>
+    </div>
+    <dialog class="dialog" id= "dialog">
+        <form class="form" id = "form">
+            <h2>Add a new book!</h2>
+            <label>
+                Title:
+                <input type="text" id="title" name="title" required>
+            </label>
+            <label>
+                Author:
+                <input type="text" id="author" name="author" required>
+            </label>
+            <label>
+                Pages:
+                <input type="number" id="pages" name="pages" required>
+            </label>
+            <label>
+                Have you read this book?
+                <input type="checkbox" id="read" name="read" >
+            </label>
+            
+            <div class = "bottomForm">
+                <button type = "submit" class="button" id="submit" formnovalidate>Add Book</button>
+                <button class="button" type="button" id="close-btn" formnovalidate>Close</button>
+            </div>
+        </form>
+    </dialog>
+
+
+    <div class="table">
+       
+        <div class="header">
+            <div class = "attribute">Number</div>
+            <div class = "attribute">Title</div>   
+            <div class = "attribute">Author</div>
+            <div class = "attribute">Pages</div>
+            <div class = "attribute">Has Read</div>
+            <div class = "attribute">Toggle Read</div>
+            <div class = "attribute">ID</div>  
+        </div>
+        <div class="books">
+            
+        </div>
+    </div>
+</body>
+</html>
