@@ -23,6 +23,7 @@ function addBookToLibrary(title, author, pages, read) {
 }
 function printBooks(){
     const books = document.querySelector('.books');
+    books.innerHTML = '';
     let index = 0;
     myLibrary.forEach((book, index) => {
         const row = document.createElement('row');
@@ -98,7 +99,7 @@ booksContainer.addEventListener('click', (e) => {
 const addBookBtn = document.querySelector('.addBook');
 const dialog = document.getElementById('dialog');
 const form = document.getElementById('form');
-
+const errorVal = document.getElementById('error');
 //Show Dialog
 
 addBookBtn.addEventListener('click', () => dialog.showModal());
@@ -106,12 +107,38 @@ addBookBtn.addEventListener('click', () => dialog.showModal());
 //Add book to list
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // ✅ prevent page refresh
+    let messages = [];
+    errorVal.innerHTML = "";
+
 
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const pages = document.getElementById("pages").value;
     const read = document.getElementById("read").checked;
 
+
+    if(title === null || title === '')
+    {
+        messages.push("You must have a title");
+    }
+    if(author === null || author === '')
+    {
+        messages.push("You must have an author");
+    }
+    if(pages === null || pages === '')
+    {
+        messages.push("Add the pages to the book");
+    }
+     if(pages > 100000)
+    {
+        messages.push("Book has too many pages. Must be less than 100k");
+    }
+    if(messages.length > 0)
+    {
+        e.preventDefault(); 
+        errorVal.innerHTML = messages.join(", ");
+        return;
+    }
     addBookToLibrary(title, author, pages, read);
 
     form.reset();
